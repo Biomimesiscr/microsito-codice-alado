@@ -4,9 +4,16 @@ import { Button } from "../core/buttons/Button";
 import { AnimatedSection } from "../core/motion/AnimatedSection";
 import { AnimatedFade } from "../core/motion/AnimatedFade";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 export function Hero() {
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const handleMenuClick = () => {
+    navigate("/menu");
+  };
 
   return (
     <section className="relative h-full w-full flex flex-col justify-center px-8 sm:px-16 md:px-24 lg:px-32 z-10">
@@ -31,7 +38,7 @@ export function Hero() {
 
         <div className="w-full flex justify-center mt-4">
           <AnimatedFade delay={0.8} scale={0.92}>
-            <Button variant="glass" size="lg" className="rounded-full px-12 py-3 text-2xl font-medium tracking-wide">
+            <Button onClick={handleMenuClick} variant="glass" size="lg" className="rounded-full px-12 py-3 text-2xl font-medium tracking-wide">
               {t("core.menu")}
             </Button>
           </AnimatedFade>

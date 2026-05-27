@@ -6,5 +6,12 @@
   },
   "core": {
     "menu": "menú"
+  },
+  "menu": {
+    "back": "Volver",
+    "species": "Especies",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto CICIMA",
+    "community": "Comunidad"
   }
 }
