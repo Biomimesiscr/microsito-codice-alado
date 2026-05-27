@@ -1,33 +1,25 @@
-// Vídeo de uhumrea D.: https://www.pexels.com/es-es/video/fotografia-macro-de-una-abeja-polinizando-una-flor-de-lavanda-34560675/
+import { Header } from "./components/layout/Header";
+import { Hero } from "./components/home/Hero";
+
 function App() {
   return (
-    <>
-      <video
-        src="/landingbg.mp4"
-        autoPlay
-        loop
-        muted
-        className="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
-      ></video>
+    <main className="relative w-screen h-screen overflow-hidden bg-black font-sans">
+      {/* Placeholder Background Image */}
+      <img
+        src="/landingbg.jpg"
+        alt="Background placeholder"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-60"
+      />
 
-      {/* Opaque overlay */}
-      <div className="fixed inset-0 z-10 flex flex-col items-center justify-center bg-black/80">
-        <div className="flex items-center gap-8 mb-10 animate-fade-slide-up">
-          <img src="/cicima.svg" alt="CICIMA" className="h-18 w-auto" />
-        </div>
-        <h1 className="text-white text-6xl font-bold text-center tracking-wide mb-4 animate-fade-slide-up-delay">
-          Códice Alado
-        </h1>
-        <p className="text-white/70 text-2xl font-semibold text-center px-6 animate-fade-slide-up-delay">
-          Sitio en construcción... pronto estaremos contigo
-        </p>
-        <div className="mt-10 flex items-center gap-2 animate-fade-slide-up-delay">
-          <span className="h-2.5 w-2.5 rounded-full bg-white/80 animate-bounce [animation-delay:-0.3s]"></span>
-          <span className="h-2.5 w-2.5 rounded-full bg-white/80 animate-bounce [animation-delay:-0.15s]"></span>
-          <span className="h-2.5 w-2.5 rounded-full bg-white/80 animate-bounce"></span>
-        </div>
+      {/* Dark gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 w-full h-full flex flex-col">
+        <Header />
+        <Hero />
       </div>
-    </>
+    </main>
   );
 }
 

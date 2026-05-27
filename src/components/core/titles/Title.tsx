@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, JSX } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
 export interface TitleProps extends ComponentPropsWithoutRef<"h1"> {
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -14,7 +14,7 @@ export function Title({
   children,
   ...props
 }: TitleProps) {
-  const Tag = tag as keyof JSX.IntrinsicElements;
+  const Tag = tag as any;
 
   // Base styles for clean typography matching the DM Sans configuration
   const baseStyles = "font-sans tracking-wide transition-all duration-300";
