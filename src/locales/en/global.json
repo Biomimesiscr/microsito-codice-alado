@@ -1,1 +1,10 @@
-{}
+{
+  "hero": {
+    "title": "Winged Codex",
+    "subtitle": "Archive of life forms",
+    "body": "Explore nat2ure from a new perspective with the virtual collection of biophysical data from CICIMA, where insects and other organisms inspire scientific and technological advances based on the richness of local biodiversity"
+  },
+  "core": {
+    "menu": "menu"
+  }
+}
