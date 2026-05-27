@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { SegmentedToggle } from "../core/toggles/SegmentedToggle";
 import { Button } from "../core/buttons/Button";
 import { AnimatedHeader } from "../core/motion/AnimatedHeader";
@@ -21,7 +22,9 @@ export function Header() {
         onChange={changeLanguage}
       />
       <Button variant="ghost" size="md" className="font-semibold text-lg text-white">
-        Log In
+        <Link to="/login" className="block w-full h-full">
+          Log In
+        </Link>
       </Button>
     </AnimatedHeader>
   );
