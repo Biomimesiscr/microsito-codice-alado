@@ -14,6 +14,7 @@ export function InfographyCanvas({
   zoomLabels,
 }: InfographyCanvasProps) {
   const [currentLayer, setCurrentLayer] = useState(0)
+  const [focusedId, setFocusedId] = useState<string | null>(null)
   const sceneRef = useRef<HTMLDivElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const totalLayers = Math.max(...layers.map(l => l.layer)) + 1
@@ -27,25 +28,30 @@ export function InfographyCanvas({
     [totalLayers],
   )
 
-  const focusElement = useCallback((el: HTMLElement, focusZoom = FOCUS_ZOOM) => {
-    const wrap = wrapRef.current
-    const scene = sceneRef.current
-    if (!wrap || !scene) return
-    const wR = wrap.getBoundingClientRect()
-    const eR = el.getBoundingClientRect()
-    const ex = eR.left + eR.width / 2 - wR.left
-    const ey = eR.top + eR.height / 2 - wR.top
-    const tx = (wR.width / 2 - ex) + (wR.width / 2 - ex) * (focusZoom - 1) / focusZoom
-    const ty = (wR.height / 2 - ey) + (wR.height / 2 - ey) * (focusZoom - 1) / focusZoom
-    scene.style.transform = `translate(${tx}px, ${ty}px) scale(${focusZoom})`
-  }, [])
+  const focusElement = useCallback(
+    (el: HTMLElement, id: string, focusZoom = FOCUS_ZOOM) => {
+      const wrap = wrapRef.current
+      const scene = sceneRef.current
+      if (!wrap || !scene) return
+      const wR = wrap.getBoundingClientRect()
+      const eR = el.getBoundingClientRect()
+      const ex = eR.left + eR.width / 2 - wR.left
+      const ey = eR.top + eR.height / 2 - wR.top
+      const tx = (wR.width / 2 - ex) + (wR.width / 2 - ex) * (focusZoom - 1) / focusZoom
+      const ty = (wR.height / 2 - ey) + (wR.height / 2 - ey) * (focusZoom - 1) / focusZoom
+      scene.style.transform = `translate(${tx}px, ${ty}px) scale(${focusZoom})`
+      setFocusedId(id)
+    },
+    [],
+  )
 
   const resetFocus = useCallback(() => {
     if (sceneRef.current) sceneRef.current.style.transform = 'translate(0,0) scale(1)'
+    setFocusedId(null)
   }, [])
 
   return (
-    <InfographyContext.Provider value={{ currentLayer, focusElement, resetFocus }}>
+    <InfographyContext.Provider value={{ currentLayer, focusedId, focusElement, resetFocus }}>
       <div
         ref={wrapRef}
         className="relative overflow-hidden cursor-ns-resize"
@@ -54,6 +60,7 @@ export function InfographyCanvas({
           e.preventDefault()
           changeLayer(e.deltaY > 0 ? 1 : -1)
         }}
+        onClick={resetFocus}
       >
         <div
           ref={sceneRef}
@@ -65,7 +72,13 @@ export function InfographyCanvas({
               {layers
                 .filter(item => item.layer === i)
                 .map((item, j) => (
-                  <InfographySlot key={j} x={item.x} y={item.y} focusZoom={item.focusZoom}>
+                  <InfographySlot
+                    key={j}
+                    id={`${i}-${j}`}
+                    x={item.x}
+                    y={item.y}
+                    focusZoom={item.focusZoom}
+                  >
                     {item.component}
                   </InfographySlot>
                 ))}
