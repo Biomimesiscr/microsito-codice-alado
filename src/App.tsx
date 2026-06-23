@@ -1,7 +1,7 @@
-// Vídeo de uhumrea D.: https://www.pexels.com/es-es/video/fotografia-macro-de-una-abeja-polinizando-una-flor-de-lavanda-34560675/
+
 function App() {
   return (
-    <>
+   <>
       <video
         src="/landingbg.mp4"
         autoPlay
@@ -28,7 +28,7 @@ function App() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
