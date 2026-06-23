@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Códice Alado",
+    "subtitle": "Archivo de formas de vida",
+    "body": "Explora la naturaleza desde una nueva perspectiva con la colección virtual de datos biofísicos del CICIMA, donde los insectos y otros organismos inspiran avances científicos y tecnológicos a partir de la riqueza de la biodiversidad local"
+  },
+  "core": {
+    "menu": "menú"
+  },
+  "menu": {
+    "back": "Volver",
+    "species": "Especies",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto CICIMA",
+    "community": "Comunidad"
+  }
+}

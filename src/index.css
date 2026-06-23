@@ -1,20 +1,12 @@
 @import "tailwindcss";
 
-@keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@theme {
+  --color-primary: #1C434A;
+  --color-secondary: #01112B;
+  --color-tertiary: #F69D4A;
+  --color-quaternary: #F085AF;
 }
 
-.animate-fade-slide-up {
-  animation: fadeSlideUp 0.9s ease both;
-}
-
-.animate-fade-slide-up-delay {
-  animation: fadeSlideUp 0.9s ease 0.4s both;
+body {
+  font-family: "DM Sans", sans-serif;
 }

@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# AI Generated Content
+.opencode
+.antigravity
+.gemini
+AGENTS.md
+skills-lock.json
