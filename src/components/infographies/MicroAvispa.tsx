@@ -31,7 +31,7 @@ const layers: LayerItem[] = [
     layer: 0,
     x: '50%',
     y: 300,
-    component: <BugImage src="/images/avispa.png" size={80} alt="Microavispa" />,
+    component: <BugImage src="/wasp.png" size={80} alt="Microavispa" />,
   },
 
   // ── Capa 1: descripción física ─────────────────────

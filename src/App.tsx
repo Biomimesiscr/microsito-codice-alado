@@ -3,6 +3,7 @@ import { Layout } from "./components/layout/Layout";
 import { HomePage } from "./routes/HomePage";
 import { NotFoundPage } from "./routes/NotFoundPage";
 import { MenuPage } from "./routes/MenuPage";
+import { MicroAvispa } from "./components/infographies/MicroAvispa";
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="*" element={<NotFoundPage />} />
+        </Route>
+        <Route>
+          <Route path="/micro-avispa" element={<MicroAvispa />} />
+
         </Route>
         <Route path="/menu" element={<MenuPage />} />
       </Routes>
