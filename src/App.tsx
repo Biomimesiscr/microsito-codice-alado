@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Layout } from "./components/layout/Layout";
+import { InfographyLayout } from "./components/layout/InfographyLayout";
 import { HomePage } from "./routes/HomePage";
 import { NotFoundPage } from "./routes/NotFoundPage";
 import { MenuPage } from "./routes/MenuPage";
@@ -13,9 +14,8 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
-        <Route>
+        <Route element={<InfographyLayout />}>
           <Route path="/micro-avispa" element={<MicroAvispa />} />
-
         </Route>
         <Route path="/menu" element={<MenuPage />} />
       </Routes>

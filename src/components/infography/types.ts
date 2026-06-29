@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
 export interface LayerItem {
-  /** Nivel de zoom en que este slot es visible (0, 1, 2...) */
-  layer: number
+  /** Capa(s) en que el slot es visible. Un número o varios (number[]). */
+  layer: number | number[]
 
   /** Posición horizontal: número = px absoluto, string = CSS (ej. "50%") */
   x: number | string
@@ -10,11 +10,14 @@ export interface LayerItem {
   /** Posición vertical: número = px absoluto, string = CSS (ej. "50%") */
   y: number | string
 
-  /**
-   * Zoom aplicado al hacer hover sobre este slot.
-   * Default: 1.18
-   */
+  /** Si true, hacer hover sobre el slot hace zoom hacia él. Default: false */
+  zoomable?: boolean
+
+  /** Zoom aplicado en hover cuando zoomable. Default: 1.18 */
   focusZoom?: number
+
+  /** Si se define, hacer click en el slot navega a esa capa. */
+  navigateTo?: number
 
   /** Componente React a renderizar en esta posición */
   component: ReactNode
@@ -22,8 +25,8 @@ export interface LayerItem {
 
 export interface InfographyCanvasProps {
   layers: LayerItem[]
-  /** Altura del canvas en px. Default: 420 */
-  height?: number
+  /** Altura del canvas en px o CSS. Default: 420 */
+  height?: number | string
   /** Etiquetas de zoom para cada nivel. Default: ["%95", "%120", "%125"] */
   zoomLabels?: string[]
 }
