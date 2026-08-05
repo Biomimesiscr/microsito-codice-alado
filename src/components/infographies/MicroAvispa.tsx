@@ -2,8 +2,6 @@ import { InfographyCanvas } from "../infography/InfographyCanvas";
 import { TitleBlock } from "../blocks/TitleBlock";
 import { BodyText } from "../blocks/BodyText";
 import { BugImage } from "../blocks/BugImage";
-import { FactList } from "../blocks/FactList";
-import { BlobDetail } from "../blocks/BlobDetail";
 import ColorsDetail from "../blocks/ColorsDetail";
 // import { SectionLabel } from '../blocks/SectionLabel'
 import type { LayerItem } from "../infography/types";
