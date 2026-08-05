@@ -7,6 +7,24 @@
   "core": {
     "menu": "menú"
   },
+  "species": {
+    "title": "Especies",
+    "search": "Buscar",
+    "breadcrumb": {
+      "home": "Inicio",
+      "menu": "Menú"
+    },
+    "categories": {
+      "bees": "Abejas",
+      "wasps": "Avispas"
+    },
+    "items": {
+      "xylocopa": "Abejorros, cigarrones",
+      "euglossa": "Abejas de las orquídeas",
+      "ormyrus": "Avispas de los higos",
+      "parasitoides": "Micro avispas"
+    }
+  },
   "menu": {
     "back": "Volver",
     "species": "especies",

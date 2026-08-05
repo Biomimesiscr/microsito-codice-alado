@@ -4,6 +4,7 @@ import { InfographyLayout } from "./components/layout/InfographyLayout";
 import { HomePage } from "./routes/HomePage";
 import { NotFoundPage } from "./routes/NotFoundPage";
 import { MenuPage } from "./routes/MenuPage";
+import { SpeciesPage } from "./routes/SpeciesPage";
 import { MicroAvispa } from "./components/infographies/MicroAvispa";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/micro-avispa" element={<MicroAvispa />} />
         </Route>
         <Route path="/menu" element={<MenuPage />} />
+        <Route path="/species" element={<SpeciesPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -8,6 +8,12 @@ export interface SurfaceProps {
   tone?: SurfaceTone;
   /** Ilustraciones decorativas de fondo. */
   decor?: DecorSlot[];
+  /**
+   * Permite que la página crezca más allá del viewport. Se usa `w-full` y no
+   * `w-screen` porque `100vw` incluye el ancho de la barra de scroll: en cuanto
+   * aparece la vertical, `w-screen` provoca scroll horizontal.
+   */
+  scroll?: boolean;
   className?: string;
   children: ReactNode;
 }
@@ -16,11 +22,21 @@ export interface SurfaceProps {
  * Shell de página. Única fuente del fondo y del color de texto base, para que
  * Layout, Menu e InfographyLayout no repliquen el mismo markup.
  */
-export function Surface({ tone = "cream", decor, className = "", children }: SurfaceProps) {
+export function Surface({
+  tone = "cream",
+  decor,
+  scroll = false,
+  className = "",
+  children,
+}: SurfaceProps) {
+  const sizing = scroll
+    ? "w-full min-h-screen"
+    : "w-screen h-screen overflow-hidden";
+
   return (
     <main
       data-surface={tone}
-      className={`relative w-screen h-screen overflow-hidden bg-surface text-fg font-sans ${className}`.trim()}
+      className={`relative ${sizing} bg-surface text-fg font-sans ${className}`.trim()}
     >
       {decor?.map((slot) => (
         <Decor key={`${slot.src}-${slot.className ?? ""}`} {...slot} />

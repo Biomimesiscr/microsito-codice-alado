@@ -7,6 +7,24 @@
   "core": {
     "menu": "menu"
   },
+  "species": {
+    "title": "Species",
+    "search": "Search",
+    "breadcrumb": {
+      "home": "Home",
+      "menu": "Menu"
+    },
+    "categories": {
+      "bees": "Bees",
+      "wasps": "Wasps"
+    },
+    "items": {
+      "xylocopa": "Carpenter bees",
+      "euglossa": "Orchid bees",
+      "ormyrus": "Fig wasps",
+      "parasitoides": "Micro wasps"
+    }
+  },
   "menu": {
     "back": "Back",
     "species": "species",
