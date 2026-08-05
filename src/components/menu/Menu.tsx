@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { AnimatedFade } from "../core/motion/AnimatedFade";
 import { useTranslation } from "react-i18next";
+import { Surface } from "../layout/Surface";
+import type { DecorSlot } from "../decor/Decor";
+
+const decor: DecorSlot[] = [
+  {
+    src: "/illustrations/wasp-line.svg",
+    className:
+      "top-1/2 -translate-y-1/2 left-[6%] h-[80vh] aspect-[240/400] text-fg opacity-90",
+  },
+];
 
 export function Menu() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -29,8 +38,9 @@ export function Menu() {
     return center + radius * Math.sin(rad);
   });
 
-  const inactiveColor = "#555555";
-  const activeColor = "#F69D4A";
+  // El color va por clases de Tailwind + `transition-colors`, no por Motion:
+  // Motion no interpola variables CSS (escribe el `var()` tal cual y el cambio
+  // saltaría). Motion sigue encargándose de escala, posición y grosor.
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,17 +61,7 @@ export function Menu() {
   };
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-black font-sans">
-      <AnimatedFade duration={2} className="absolute inset-0 w-full h-full z-0">
-        <img
-          src="/landingbg.jpg"
-          alt="Menu background"
-          className="w-full h-full object-cover opacity-30"
-        />
-      </AnimatedFade>
-
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-[1]" />
-
+    <Surface tone="olive" decor={decor}>
       <motion.button
         onClick={() => navigate("/")}
         initial={{ opacity: 0, x: -20 }}
@@ -69,7 +69,7 @@ export function Menu() {
         transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute top-8 left-8 z-50 p-3 text-white/70 hover:text-white transition-colors duration-300 cursor-pointer"
+        className="absolute top-8 left-8 z-50 p-3 text-fg-muted hover:text-accent transition-colors duration-300 cursor-pointer"
         aria-label={t("menu.back")}
       >
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -101,12 +101,13 @@ export function Menu() {
                 >
                   <motion.h2
                     animate={{
-                      color: isHovered ? activeColor : inactiveColor,
                       scale: isHovered ? 1.08 : 1,
                       letterSpacing: isHovered ? "0.06em" : "0em",
                     }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="text-4xl md:text-5xl font-bold cursor-pointer select-none"
+                    className={`text-4xl md:text-5xl font-bold cursor-pointer select-none transition-colors duration-300 ${
+                      isHovered ? "text-accent" : "text-fg"
+                    }`}
                     onClick={() => navigate(`/${item.id}`)}
                   >
                     {item.label}
@@ -119,8 +120,7 @@ export function Menu() {
                         animate={{ scaleX: 1, opacity: 1 }}
                         exit={{ scaleX: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="h-[2px] mt-1 origin-left"
-                        style={{ backgroundColor: activeColor }}
+                        className="h-[2px] mt-1 origin-left bg-accent"
                       />
                     )}
                   </AnimatePresence>
@@ -145,15 +145,13 @@ export function Menu() {
                   cy={center}
                   r={radius}
                   fill="none"
-                  stroke={isHovered ? activeColor : inactiveColor}
-                  strokeWidth={isHovered ? 70 : 60}
                   strokeDasharray={dasharray}
                   transform={`rotate(${rotation} ${center} ${center})`}
-                  className="cursor-pointer"
-                  animate={{
-                    stroke: isHovered ? activeColor : inactiveColor,
-                    strokeWidth: isHovered ? 70 : 60,
-                  }}
+                  className={`cursor-pointer transition-[stroke] duration-300 ${
+                    isHovered ? "stroke-fg-subtle" : "stroke-surface-raised"
+                  }`}
+                  initial={{ strokeWidth: 60 }}
+                  animate={{ strokeWidth: isHovered ? 70 : 60 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   onMouseEnter={() => setHoveredIndex(i)}
                   onMouseLeave={() => setHoveredIndex(null)}
@@ -163,7 +161,7 @@ export function Menu() {
           </svg>
         </div>
       </div>
-    </main>
+    </Surface>
   );
 }
 

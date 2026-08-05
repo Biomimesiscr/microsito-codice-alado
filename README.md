@@ -47,10 +47,10 @@ npm run lint
 │   ├── locales/             # i18n translation files
 │   │   ├── en/global.json   # English
 │   │   └── es/global.json   # Spanish
-│   ├── App.tsx              # Root component (single-page, no router)
+│   ├── App.tsx              # Root component (routes: /, /menu, /micro-avispa)
 │   ├── main.tsx             # React entry point
 │   ├── i18n.ts              # i18next configuration
-│   └── index.css            # Tailwind v4 theme & custom animations
+│   └── index.css            # Tailwind v4 theme — the only place colour is declared
 ├── Dockerfile               # Multi-stage Docker build
 ├── nginx.conf               # Nginx config for SPA routing & caching
 └── index.html               # HTML shell (DM Sans font loaded via <link>)
@@ -63,7 +63,7 @@ The project provides a set of reusable UI primitives under `src/components/core/
 | Component | Import | Description |
 |---|---|---|
 | **Title** | `titles/Title` | Heading (`h1`–`h6`) with `primary` / `secondary` / `accent` variants and optional `glow` |
-| **Button** | `buttons/Button` | Button with `glass` / `solid` / `outline` / `ghost` variants and `sm` / `md` / `lg` sizes |
+| **Button** | `buttons/Button` | Button with `pill` / `solid` / `outline` / `ghost` variants and `sm` / `md` / `lg` sizes |
 | **Paragraph** | `paragraphs/Paragraph` | Body text with `body` / `lead` / `muted` variants |
 | **SegmentedToggle** | `toggles/SegmentedToggle` | Multi-option segmented control with animated sliding indicator |
 | **SwitchToggle** | `toggles/SwitchToggle` | Binary on/off switch with optional label |
@@ -78,16 +78,33 @@ See [`docs/i18n.md`](docs/i18n.md) for setup details, usage patterns, and instru
 
 ## Theme
 
-Custom colors and animations are defined in `src/index.css` using Tailwind v4's `@theme` syntax:
+All colour lives in `src/index.css` — **no component should declare a literal colour**. The file has two layers, both declared with Tailwind v4's `@theme` syntax.
 
-| Token | Hex | Usage |
+**Brand palette** (raw values, not used directly in components):
+
+| Token | Hex | |
 |---|---|---|
-| `primary` | `#1C434A` | Deep teal — solid buttons, active elements |
-| `secondary` | `#01112B` | Dark navy — backgrounds, header accents |
-| `tertiary` | `#F69D4A` | Warm amber — accent headings, highlights |
-| `quaternary` | `#F085AF` | Soft pink — decorative accents |
+| `cream` | `#E6E2CB` | Page background (light surface) |
+| `rust` | `#914509` | Burnt orange accent |
+| `ink` | `#000103` | Near-black body text |
+| `olive` | `#585C24` | Page background (dark surface) |
+| `olive-light` | `#6B6F35` | Raised elements on olive |
+| `moss` | `#7C7E48` | Large headings on cream |
+| `sage` | `#A8AC8B` | Body text on olive |
+| `sand` | `#E3D9A8` | Pills, toggles, accent on olive |
 
-Custom animations: `animate-fade-slide-up` and `animate-fade-slide-up-delay` (0.4s delay).
+**Semantic layer** — this is what components consume: `surface`, `surface-raised`, `fg`, `fg-muted`, `fg-subtle`, `heading`, `accent`, `line`. Use them as normal Tailwind utilities (`bg-surface`, `text-heading`, `border-line`, …).
+
+Each **surface** remaps the semantic tokens for its subtree, so the same component renders correctly on either background:
+
+```tsx
+<Surface tone="cream">…</Surface>   // home, 404, infographies
+<Surface tone="olive">…</Surface>   // menu
+```
+
+`Surface` (`src/components/layout/Surface.tsx`) sets `data-surface`, which `index.css` keys the overrides off. Because the utilities compile to `var(--color-…)`, the override cascades — so `@theme inline` must **not** be used for the semantic tokens.
+
+Decorative illustrations go through `Decor` (`src/components/decor/Decor.tsx`), which paints an SVG/PNG via `mask-image` + `currentColor`. The asset's own colours are ignored; it takes the surface's token, so swapping the file needs no code change.
 
 Font: **DM Sans** loaded via Google Fonts in `index.html`.
 

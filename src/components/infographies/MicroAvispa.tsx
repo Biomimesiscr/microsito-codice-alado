@@ -53,8 +53,12 @@ const layers: LayerItem[] = [
     x: "25%",
     y: "35%",
     zoomable: true,
+    // Datos de muestra: sustituir por los colores reales de la especie.
     component: (
-      <ColorsDetail colors={["red", "#00FF00", "#0000FF"]} size={60} />
+      <ColorsDetail
+        colors={["var(--color-rust)", "var(--color-moss)", "var(--color-sand)"]}
+        size={60}
+      />
     ),
   },
   {

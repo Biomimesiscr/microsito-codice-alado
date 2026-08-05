@@ -1,12 +1,12 @@
 import type { ComponentPropsWithoutRef } from "react";
 
 export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  variant?: "glass" | "solid" | "outline" | "ghost";
+  variant?: "pill" | "solid" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
 }
 
 export function Button({
-  variant = "glass",
+  variant = "pill",
   size = "md",
   className = "",
   children,
@@ -14,25 +14,25 @@ export function Button({
 }: ButtonProps) {
   // Core styling with transitions and active scale effect for responsiveness
   const baseStyles =
-    "inline-flex items-center justify-center font-sans font-medium tracking-wide transition-all duration-350 ease-out focus:outline-none focus:ring-2 focus:ring-white/20 active:scale-97 cursor-pointer select-none";
+    "inline-flex items-center justify-center font-sans font-medium tracking-wide transition-all duration-350 ease-out focus:outline-none focus:ring-2 focus:ring-accent/30 active:scale-97 cursor-pointer select-none";
 
-  // Visual variants
+  // Visual variants — todo el color sale de la capa semántica de index.css
   const variantStyles = {
-    // Replicates the "menú" button in the mockup: premium glassmorphism
-    glass:
-      "bg-black/30 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]",
-    
-    // Premium solid styling utilizing the theme's colors
+    // El botón "menú" del mockup: píldora arena con texto rust
+    pill:
+      "bg-surface-raised text-accent rounded-full hover:brightness-95 hover:shadow-[0_4px_16px_-6px_var(--color-fg)]",
+
+    // Acento sólido para llamadas a la acción principales
     solid:
-      "bg-primary text-white border border-primary/20 rounded-lg hover:bg-primary/90 hover:shadow-[0_4px_20px_rgba(28,67,74,0.3)] active:bg-primary/95",
-    
+      "bg-accent text-surface border border-accent rounded-lg hover:brightness-110 active:brightness-95",
+
     // Sleek border-only component
     outline:
-      "bg-transparent border border-white/30 text-white rounded-lg hover:bg-white/10 hover:border-white/60",
-    
-    // Replicates the "Log In" button from the mockup
+      "bg-transparent border border-line text-fg rounded-lg hover:bg-surface-raised hover:border-accent",
+
+    // El botón "Log In" del mockup
     ghost:
-      "bg-transparent text-white/85 rounded-md hover:text-white hover:scale-103 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]",
+      "bg-transparent text-fg-muted rounded-md hover:text-accent hover:scale-103",
   };
 
   // Standard sizes

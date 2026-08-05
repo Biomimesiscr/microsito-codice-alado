@@ -41,12 +41,12 @@ export function SegmentedToggle({
   return (
     <div
       ref={containerRef}
-      className={`relative inline-flex items-center p-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full select-none ${className}`}
+      className={`relative inline-flex items-center p-1 bg-surface-raised border border-line rounded-full select-none ${className}`}
       {...props}
     >
       {/* Sliding background indicator */}
       <span
-        className="absolute top-1 bottom-1 bg-white rounded-full transition-all duration-350 ease-out shadow-[0_2px_10px_rgba(255,255,255,0.1)]"
+        className="absolute top-1 bottom-1 bg-surface rounded-full transition-all duration-350 ease-out shadow-[0_1px_4px_-1px_var(--color-line)]"
         style={{
           left: `${indicatorStyle.left}px`,
           width: `${indicatorStyle.width}px`,
@@ -66,8 +66,8 @@ export function SegmentedToggle({
             onClick={() => onChange(option.value)}
             className={`relative z-10 px-5 py-1.5 text-sm font-medium tracking-wide rounded-full transition-colors duration-300 cursor-pointer focus:outline-none ${
               isActive
-                ? "text-secondary font-bold"
-                : "text-white/60 hover:text-white"
+                ? "text-accent font-bold"
+                : "text-fg-subtle hover:text-fg"
             }`}
           >
             {option.label}

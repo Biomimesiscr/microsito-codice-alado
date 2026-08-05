@@ -379,11 +379,11 @@ interface Props {
   color?: string
 }
 
-export function CustomBlock({ label, value, color = 'blue' }: Props) {
+export function CustomBlock({ label, value }: Props) {
   return (
-    <div className={`rounded-lg p-4 bg-${color}-100`}>
-      <p className="text-sm font-semibold text-gray-700">{label}</p>
-      <p className="text-2xl font-bold text-gray-900">{value}</p>
+    <div className="rounded-lg p-4 bg-surface-raised">
+      <p className="text-sm font-semibold text-fg-muted">{label}</p>
+      <p className="text-2xl font-bold text-fg">{value}</p>
     </div>
   )
 }
@@ -418,11 +418,9 @@ const layers: LayerItem[] = [
 All blocks use Tailwind classes. The canvas and layout wrappers also use Tailwind:
 
 ```typescript
-// Light background (InfographyLayout)
-<main className="bg-white">
-
-// Dark background (Layout)
-<main className="bg-black">
+// Surfaces set the palette; never hardcode a colour (see README.md → Theme)
+<Surface tone="cream">   // InfographyLayout, Layout
+<Surface tone="olive">   // Menu
 
 // Dynamic transforms stay inline (InfographyCanvas)
 <div style={{ transform: `translate(${tx}px, ${ty}px) scale(${z})` }}>

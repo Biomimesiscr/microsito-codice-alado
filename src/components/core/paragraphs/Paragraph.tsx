@@ -15,9 +15,9 @@ export function Paragraph({
 
   // Variant mappings for different body text purposes
   const variantStyles = {
-    body: "text-white/85 text-base sm:text-lg font-light tracking-wide max-w-3xl",
-    lead: "text-white/95 text-lg sm:text-xl font-normal tracking-wide max-w-4xl",
-    muted: "text-white/55 text-xs sm:text-sm font-light tracking-wide",
+    body: "text-fg-muted text-base sm:text-lg font-light tracking-wide max-w-3xl",
+    lead: "text-fg text-lg sm:text-xl font-normal tracking-wide max-w-4xl",
+    muted: "text-fg-subtle text-xs sm:text-sm font-light tracking-wide",
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`.trim();

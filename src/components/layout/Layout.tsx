@@ -1,25 +1,31 @@
 import { Outlet } from "react-router";
 import { Header } from "./Header";
-import { AnimatedFade } from "../core/motion/AnimatedFade";
+import { Surface } from "./Surface";
+import type { DecorSlot } from "../decor/Decor";
+
+// Los PNG son 1440x1024: la caja debe llevar ese aspect para que `contain`
+// no deje franjas vacías y la posición sea predecible.
+const decor: DecorSlot[] = [
+  {
+    src: "/illustrations/home2.png",
+    className:
+      "top-[2%] -right-[14%] h-[62%] aspect-[1440/1024] text-accent",
+  },
+  {
+    src: "/illustrations/home1.png",
+    className:
+      "-bottom-[14%] -left-[16%] h-[62%] aspect-[1440/1024] text-heading opacity-85",
+  },
+];
 
 export function Layout() {
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-black font-sans">
-      <AnimatedFade duration={1.5} className="absolute inset-0 w-full h-full z-0">
-        <img
-          src="/landingbg.jpg"
-          alt="Background"
-          className="w-full h-full object-cover opacity-60"
-        />
-      </AnimatedFade>
-
-      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent z-0"></div>
-
+    <Surface tone="cream" decor={decor}>
       <div className="relative z-10 w-full h-full flex flex-col">
         <Header />
         <Outlet />
       </div>
-    </main>
+    </Surface>
   );
 }
 

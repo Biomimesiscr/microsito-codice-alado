@@ -21,14 +21,14 @@ export function Title({
 
   // Variant mappings based on visual hierarchy in the screenshot
   const variantStyles = {
-    primary: "text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight",
-    secondary: "text-white/95 font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug",
-    accent: "text-tertiary font-bold text-3xl sm:text-4xl md:text-5xl leading-tight",
+    primary: "text-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight",
+    secondary: "text-accent font-medium text-2xl sm:text-3xl md:text-4xl leading-snug",
+    accent: "text-accent font-bold text-3xl sm:text-4xl md:text-5xl leading-tight",
   };
 
-  // Premium glow effect: text-shadow using css variables or standard styles
+  // Realce sutil sobre la superficie clara
   const glowStyles = glow
-    ? "drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]"
+    ? "drop-shadow-[0_2px_10px_var(--color-line)]"
     : "";
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${glowStyles} ${className}`.trim();

@@ -12,7 +12,7 @@ export function BugImage({ src, size, alt = '' }: Props) {
   if (failed) {
     return (
       <div
-        className="flex items-center justify-center rounded-full border border-dashed border-gray-400 bg-gray-100 text-[10px] text-gray-400"
+        className="flex items-center justify-center rounded-full border border-dashed border-line bg-surface-raised text-[10px] text-fg-subtle"
         style={{ width: size, height: size }}
         aria-label={alt || 'imagen no disponible'}
       >

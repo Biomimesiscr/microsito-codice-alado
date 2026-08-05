@@ -1,0 +1,20 @@
+<!--
+  PLACEHOLDER. Se usa como máscara (mask-image), así que solo importa el alfa:
+  el color lo pone el token de la superficie. Sustituir por la ilustración
+  definitiva manteniendo el nombre del archivo; no hace falta tocar código.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" fill="#000">
+  <g stroke="#000" stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M78 46 C60 28 46 20 34 18" />
+    <path d="M122 46 C140 28 154 20 166 18" />
+    <path d="M70 96 L36 78 L14 86" />
+    <path d="M130 96 L164 78 L186 86" />
+    <path d="M62 130 L26 126 L6 140" />
+    <path d="M138 130 L174 126 L194 140" />
+    <path d="M56 170 L24 182 L10 204" />
+    <path d="M144 170 L176 182 L190 204" />
+  </g>
+  <ellipse cx="100" cy="56" rx="24" ry="18" />
+  <path d="M74 76 C74 66 126 66 126 76 L130 100 C130 110 70 110 70 100 Z" />
+  <path d="M100 104 C138 104 152 140 148 178 C145 212 126 234 100 234 C74 234 55 212 52 178 C48 140 62 104 100 104 Z" />
+</svg>

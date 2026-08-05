@@ -1,0 +1,27 @@
+<!--
+  PLACEHOLDER. Se usa como máscara (mask-image), así que solo importa el alfa:
+  el color lo pone el token de la superficie. Sustituir por la ilustración
+  definitiva manteniendo el nombre del archivo; no hace falta tocar código.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 400" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M104 62 C88 40 66 22 44 10" />
+  <path d="M136 62 C152 38 168 20 186 6" />
+  <ellipse cx="120" cy="74" rx="26" ry="20" />
+  <path d="M98 92 C98 82 142 82 142 92 C148 108 146 126 138 138 C126 146 114 146 102 138 C94 126 92 108 98 92 Z" />
+  <path d="M114 146 C114 156 126 156 126 146" />
+  <path d="M120 156 C146 156 158 190 156 232 C154 282 140 330 120 356 C100 330 86 282 84 232 C82 190 94 156 120 156 Z" />
+  <path d="M92 200 L148 200" />
+  <path d="M88 240 L152 240" />
+  <path d="M92 282 L148 282" />
+  <path d="M100 322 L140 322" />
+  <path d="M100 108 C70 118 40 152 26 196 C20 218 30 228 46 216 C76 194 96 156 102 126" />
+  <path d="M140 108 C170 118 200 152 214 196 C220 218 210 228 194 216 C164 194 144 156 138 126" />
+  <path d="M96 116 C74 134 54 164 42 196" />
+  <path d="M144 116 C166 134 186 164 198 196" />
+  <path d="M98 100 L58 78 L34 84" />
+  <path d="M142 100 L182 78 L206 84" />
+  <path d="M96 124 L54 122 L28 136" />
+  <path d="M144 124 L186 122 L212 136" />
+  <path d="M100 140 L62 162 L44 190" />
+  <path d="M140 140 L178 162 L196 190" />
+</svg>

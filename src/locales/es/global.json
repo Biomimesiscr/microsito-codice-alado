@@ -9,9 +9,9 @@
   },
   "menu": {
     "back": "Volver",
-    "species": "Especies",
-    "about": "Sobre Nosotros",
-    "contact": "Contacto CICIMA",
-    "community": "Comunidad"
+    "species": "especies",
+    "about": "sobre nosotros",
+    "contact": "contacto CICIMA",
+    "community": "comunidad"
   }
 }

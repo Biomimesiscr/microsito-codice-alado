@@ -21,7 +21,7 @@ export function Header() {
         value={i18n.language || "es"}
         onChange={changeLanguage}
       />
-      <Button variant="ghost" size="md" className="font-semibold text-lg text-white">
+      <Button variant="ghost" size="md" className="font-semibold text-lg">
         <Link to="/login" className="block w-full h-full">
           Log In
         </Link>

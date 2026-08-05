@@ -1,12 +1,64 @@
 @import "tailwindcss";
 
+/*
+  Capa de color única del sitio. Ningún componente debe declarar un color literal.
+
+  - Base de marca: la paleta cruda. No se usa directamente en componentes.
+  - Capa semántica: lo que consumen los componentes (bg-surface, text-fg, …).
+    Sus valores por defecto son los de la superficie "cream"; cada superficie
+    los redefine más abajo.
+
+  Importante: `@theme` normal, nunca `@theme inline`. Con `inline` el valor se
+  incrusta en la utilidad y el override por [data-surface] dejaría de aplicar.
+*/
 @theme {
-  --color-primary: #1C434A;
-  --color-secondary: #01112B;
-  --color-tertiary: #F69D4A;
-  --color-quaternary: #F085AF;
+  /* --- Base de marca --- */
+  --color-cream: #e6e2cb;
+  --color-rust: #914509;
+  --color-ink: #000103;
+  --color-olive: #585c24;
+  --color-olive-light: #6b6f35;
+  --color-moss: #7c7e48;
+  --color-sage: #a8ac8b;
+  --color-sand: #e3d9a8;
+
+  /* --- Capa semántica (defaults = superficie cream) --- */
+  --color-surface: #e6e2cb;
+  --color-surface-raised: #e3d9a8;
+  --color-fg: #000103;
+  --color-fg-muted: #3d3f26;
+  --color-fg-subtle: #7c7e48;
+  --color-heading: #7c7e48;
+  --color-accent: #914509;
+  --color-line: #c4bfa2;
 }
 
-body {
-  font-family: "DM Sans", sans-serif;
+@layer base {
+  [data-surface="cream"] {
+    --color-surface: var(--color-cream);
+    --color-surface-raised: var(--color-sand);
+    --color-fg: var(--color-ink);
+    --color-fg-muted: #3d3f26;
+    --color-fg-subtle: var(--color-moss);
+    --color-heading: var(--color-moss);
+    --color-accent: var(--color-rust);
+    --color-line: #c4bfa2;
+  }
+
+  [data-surface="olive"] {
+    --color-surface: var(--color-olive);
+    --color-surface-raised: var(--color-olive-light);
+    --color-fg: var(--color-sage);
+    --color-fg-muted: #9a9e7d;
+    --color-fg-subtle: #838766;
+    --color-heading: var(--color-sage);
+    --color-accent: var(--color-sand);
+    --color-line: var(--color-olive-light);
+  }
+
+  body {
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+  }
 }

@@ -7,7 +7,7 @@ interface Props {
 
 export function ZoomController({ current, total, labels, onChange }: Props) {
   return (
-    <div className="absolute top-3 right-3 z-10 flex items-center overflow-hidden rounded-md border-[0.5px] border-gray-300 bg-white/90">
+    <div className="absolute top-3 right-3 z-10 flex items-center overflow-hidden rounded-md border-[0.5px] border-line bg-surface/90 text-fg">
       <button
         onClick={() => onChange(-1)}
         disabled={current === 0}

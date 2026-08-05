@@ -7,10 +7,10 @@ interface Props {
 export function SectionLabel({ title, subtitle, align = 'left' }: Props) {
   return (
     <div className={align === 'right' ? 'text-right' : 'text-left'}>
-      <p className="text-xs font-light uppercase tracking-widest text-gray-400">
+      <p className="text-xs font-light uppercase tracking-widest text-fg-subtle">
         {title}
       </p>
-      <p className="text-lg font-bold uppercase tracking-wide text-gray-900">
+      <p className="text-lg font-bold uppercase tracking-wide text-fg">
         {subtitle}
       </p>
     </div>

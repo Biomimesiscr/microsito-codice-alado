@@ -21,13 +21,13 @@ export function NotFoundPage() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.6}>
-          <Paragraph variant="body" className="text-white/70 text-lg md:text-xl">
+          <Paragraph variant="body" className="text-lg md:text-xl">
             The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </Paragraph>
         </AnimatedSection>
 
         <AnimatedSection delay={0.8}>
-          <Button variant="glass" size="md" className="mt-4">
+          <Button variant="pill" size="md" className="mt-4">
             <Link to="/" className="block w-full h-full">
               Back to home
             </Link>
