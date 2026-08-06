@@ -5,6 +5,7 @@ import { HomePage } from "./routes/HomePage";
 import { NotFoundPage } from "./routes/NotFoundPage";
 import { MenuPage } from "./routes/MenuPage";
 import { SpeciesPage } from "./routes/SpeciesPage";
+import { ContactPage } from "./routes/ContactPage";
 import { MicroAvispa } from "./components/infographies/MicroAvispa";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         </Route>
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/species" element={<SpeciesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Surface } from "../layout/Surface";
+import { BackButton } from "../core/buttons/BackButton";
 import type { DecorSlot } from "../decor/Decor";
 
 const decor: DecorSlot[] = [
@@ -62,20 +63,7 @@ export function Menu() {
 
   return (
     <Surface tone="olive" decor={decor}>
-      <motion.button
-        onClick={() => navigate("/")}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-        whileHover={{ scale: 1.15 }}
-        whileTap={{ scale: 0.95 }}
-        className="absolute top-8 left-8 z-50 p-3 text-fg-muted hover:text-accent transition-colors duration-300 cursor-pointer"
-        aria-label={t("menu.back")}
-      >
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </motion.button>
+      <BackButton to="/" />
 
       <div className="absolute inset-y-0 right-0 w-full flex items-center justify-end z-10 overflow-hidden">
         <div className="relative" style={{ width: viewBoxSize, height: viewBoxSize }}>

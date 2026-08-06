@@ -25,6 +25,21 @@
       "parasitoides": "Micro wasps"
     }
   },
+  "contact": {
+    "title": "Would you like to collaborate on the research? Let's talk!",
+    "formTitle": "Let's connect and create together!",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "submit": "Send",
+    "team": {
+      "rebeca": {
+        "role": "Researcher"
+      }
+    }
+  },
   "menu": {
     "back": "Back",
     "species": "species",

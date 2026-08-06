@@ -25,6 +25,21 @@
       "parasitoides": "Micro avispas"
     }
   },
+  "contact": {
+    "title": "¿Te gustaría colaborar con la investigación? ¡Hablemos!",
+    "formTitle": "¡Conectemos para crear juntos!",
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje"
+    },
+    "submit": "Enviar",
+    "team": {
+      "rebeca": {
+        "role": "Investigadora"
+      }
+    }
+  },
   "menu": {
     "back": "Volver",
     "species": "especies",

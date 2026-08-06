@@ -29,8 +29,11 @@ export function Surface({
   className = "",
   children,
 }: SurfaceProps) {
+  // `overflow-x-hidden` en modo scroll: el decorado usa insets negativos para
+  // sangrar fuera del viewport, y sin recorte horizontal eso genera scroll
+  // lateral. El vertical se mantiene porque la altura es automática.
   const sizing = scroll
-    ? "w-full min-h-screen"
+    ? "w-full min-h-screen overflow-x-hidden"
     : "w-screen h-screen overflow-hidden";
 
   return (
