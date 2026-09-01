@@ -8,9 +8,9 @@ import type { DecorSlot } from "../decor/Decor";
 
 const decor: DecorSlot[] = [
   {
-    src: "/illustrations/wasp-line.svg",
+    src: "/illustrations/menu.png",
     className:
-      "top-1/2 -translate-y-1/2 left-[6%] h-[80vh] aspect-[240/400] text-fg opacity-90",
+      "top-1/2 -translate-y-1/2  left-[6%] h-[90vh] aspect-[500/500] text-fg opacity-90",
   },
 ];
 
