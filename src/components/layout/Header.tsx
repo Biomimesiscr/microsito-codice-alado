@@ -18,7 +18,7 @@ export function Header() {
           { value: "en", label: "English" },
           { value: "es", label: "Español" },
         ]}
-        value={i18n.language || "es"}
+        value={i18n.language.split("-")[0] || "es"}
         onChange={changeLanguage}
       />
       <Button variant="ghost" size="md" className="font-semibold text-lg">
