@@ -16,13 +16,16 @@
     },
     "categories": {
       "bees": "Bees",
-      "wasps": "Wasps"
+      "wasps": "Wasps",
+      "beetles": "Beetles"
     },
     "items": {
       "xylocopa": "Carpenter bees",
       "euglossa": "Orchid bees",
       "ormyrus": "Fig wasps",
-      "parasitoides": "Micro wasps"
+      "parasitoides": "Micro wasps",
+      "zopherus": "Zopherus beetles",
+      "chrysina": "Chrysina beetles"
     }
   },
   "contact": {
@@ -38,6 +41,15 @@
       "rebeca": {
         "role": "Researcher"
       }
+    }
+  },
+  "about": {
+    "cicima": {
+      "title": "CICIMA",
+      "body": "A multi- and interdisciplinary scientific and technological research unit devoted to the study of the physical and chemical properties of materials, for their development and adaptation in industrial processes."
+    },
+    "team": {
+      "title": "Meet the team!"
     }
   },
   "menu": {

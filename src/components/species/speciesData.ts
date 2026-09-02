@@ -16,6 +16,7 @@ export interface SpeciesItem {
   id: string;
   name: string;
   image: string;
+  illustration: string;
   /** Ruta de la infografía. */
   to: string;
 }
@@ -27,18 +28,22 @@ export interface SpeciesCategory {
 }
 
 export const speciesCategories: SpeciesCategory[] = [
-  {
-    id: "bees",
-    items: [
-      { id: "xylocopa", name: "Xylocopa", image: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
-      { id: "euglossa", name: "Euglossa", image: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
-    ],
-  },
+  // {
+  //   id: "bees",
+  //   items: [
+  //   ],
+  // },
   {
     id: "wasps",
     items: [
-      { id: "ormyrus", name: "Ormyrus", image: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
       { id: "parasitoides", name: "Parasitoides", image: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
     ],
   },
+  {
+    id: "beetles",
+    items: [
+      { id: "zopherus", name: "Zopherus", image: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
+      { id: "chrysina", name: "Chrysina", image: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
+    ],
+  }
 ];

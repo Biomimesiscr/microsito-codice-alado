@@ -6,7 +6,7 @@ import { AnimatedFade } from "../core/motion/AnimatedFade";
 import type { DecorSlot } from "../decor/Decor";
 import { Portrait } from "./Portrait";
 import { ContactForm } from "./ContactForm";
-import { team } from "./contactData";
+import { team } from "../../data/teamData";
 
 // Se reutilizan los PNG del home como placeholder. `maskSize` va por encima de
 // `contain` porque estos archivos traen mucho margen vacío alrededor del insecto.

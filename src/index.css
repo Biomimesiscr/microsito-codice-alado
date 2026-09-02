@@ -56,6 +56,19 @@
     --color-line: var(--color-olive-light);
   }
 
+  /* Banda intermedia entre cream y olive. La usa la cabecera de «sobre
+     nosotros», que en el mockup va en musgo con texto crema. */
+  [data-surface="moss"] {
+    --color-surface: var(--color-moss);
+    --color-surface-raised: var(--color-olive-light);
+    --color-fg: var(--color-cream);
+    --color-fg-muted: #d3cfb8;
+    --color-fg-subtle: #b9b59f;
+    --color-heading: var(--color-cream);
+    --color-accent: var(--color-sand);
+    --color-line: var(--color-olive-light);
+  }
+
   body {
     font-family: "DM Sans", sans-serif;
     background-color: var(--color-cream);

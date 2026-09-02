@@ -4,6 +4,12 @@ export interface PortraitProps {
   src: string;
   alt: string;
   size?: number;
+  /**
+   * Clases de dimensionado. Si se pasa, sustituye al tamaño fijo en píxeles:
+   * `size` seguiría ganando por ir en `style` inline, así que son excluyentes.
+   * Es la vía para tamaños responsivos, que no caben en un número.
+   */
+  className?: string;
 }
 
 /**
@@ -11,14 +17,15 @@ export interface PortraitProps {
  * cae a un placeholder con aspecto intencionado, así que basta con subir el
  * archivo a `public/team/` para que aparezca la foto real sin tocar código.
  */
-export function Portrait({ src, alt, size = 176 }: PortraitProps) {
+export function Portrait({ src, alt, size = 176, className }: PortraitProps) {
   const [failed, setFailed] = useState(false);
+  const sizing = className ? undefined : { width: size, height: size };
 
   if (failed) {
     return (
       <div
-        className="flex items-center justify-center rounded-full bg-surface-raised text-fg-subtle"
-        style={{ width: size, height: size }}
+        className={`flex items-center justify-center rounded-full bg-surface-raised text-fg-subtle ${className ?? ""}`.trim()}
+        style={sizing}
         role="img"
         aria-label={alt}
       >
@@ -46,8 +53,8 @@ export function Portrait({ src, alt, size = 176 }: PortraitProps) {
       alt={alt}
       width={size}
       height={size}
-      style={{ width: size, height: size }}
-      className="rounded-full object-cover"
+      style={sizing}
+      className={`rounded-full object-cover ${className ?? ""}`.trim()}
       onError={() => setFailed(true)}
     />
   );

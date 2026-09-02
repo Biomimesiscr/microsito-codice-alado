@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Decor, type DecorSlot } from "../decor/Decor";
 
-export type SurfaceTone = "cream" | "olive";
+export type SurfaceTone = "cream" | "olive" | "moss";
 
 export interface SurfaceProps {
   /** Determina la paleta del subárbol vía `[data-surface]` en index.css. */

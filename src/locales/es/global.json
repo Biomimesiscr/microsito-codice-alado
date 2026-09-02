@@ -16,13 +16,16 @@
     },
     "categories": {
       "bees": "Abejas",
-      "wasps": "Avispas"
+      "wasps": "Avispas",
+      "beetles": "Escarabajos"
     },
     "items": {
       "xylocopa": "Abejorros, cigarrones",
       "euglossa": "Abejas de las orquídeas",
       "ormyrus": "Avispas de los higos",
-      "parasitoides": "Micro avispas"
+      "parasitoides": "Micro avispas",
+      "zopherus": "Escarabajos Zopherus",
+      "chrysina": "Escarabajos Chrysina"
     }
   },
   "contact": {
@@ -38,6 +41,15 @@
       "rebeca": {
         "role": "Investigadora"
       }
+    }
+  },
+  "about": {
+    "cicima": {
+      "title": "CICIMA",
+      "body": "Es una unidad de investigación científica y tecnológica de carácter multi e interdisciplinario dedicada al estudio de las propiedades físicas y químicas de los materiales, para su desarrollo y adaptación en procesos industriales."
+    },
+    "team": {
+      "title": "¡Conocé al equipo!"
     }
   },
   "menu": {
