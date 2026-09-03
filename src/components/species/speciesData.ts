@@ -35,7 +35,7 @@ export const speciesCategories: SpeciesCategory[] = [
   {
     id: "wasps",
     items: [
-      { id: "parasitoides", name: "Parasitoides", image: "/images/bugs/microavispa.png", illustration: "/illustrations/bugs/microavispa.png", to: "/micro-avispa" },
+      { id: "parasitoides", name: "Parasitoides", image: "/images/bugs/microavispa.png", illustration: "/illustrations/bugs/microavispa.png", to: "/insecto/micro-avispas" },
     ],
   },
   {

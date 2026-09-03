@@ -47,7 +47,7 @@ npm run lint
 │   ├── locales/             # i18n translation files
 │   │   ├── en/global.json   # English
 │   │   └── es/global.json   # Spanish
-│   ├── App.tsx              # Root component (routes: /, /menu, /micro-avispa)
+│   ├── App.tsx              # Root component (routes: /, /menu, /micro-avispa, /insecto/:id)
 │   ├── main.tsx             # React entry point
 │   ├── i18n.ts              # i18next configuration
 │   └── index.css            # Tailwind v4 theme — the only place colour is declared
@@ -67,8 +67,19 @@ The project provides a set of reusable UI primitives under `src/components/core/
 | **Paragraph** | `paragraphs/Paragraph` | Body text with `body` / `lead` / `muted` variants |
 | **SegmentedToggle** | `toggles/SegmentedToggle` | Multi-option segmented control with animated sliding indicator |
 | **SwitchToggle** | `toggles/SwitchToggle` | Binary on/off switch with optional label |
+| **ArrowIcon** | `icons/ArrowIcon` | Long thin arrow (mask + `currentColor`); used as bullet and carousel control |
+| **ImageCarousel** | `media/ImageCarousel` | Generic coverflow carousel with prev/next controls and keyboard support |
 
 See [`docs/core-components.md`](docs/core-components.md) for full prop tables, variant descriptions, and usage examples.
+
+### Insect project pages
+
+`/insecto/:id` renders a long, data-driven research-project page (hero,
+pattern statement, taxonomy, biological scales infography, collection map,
+researcher profile, related articles) reused across species. See
+[`src/components/insect/README.md`](src/components/insect/README.md) for the
+full component catalog, prop tables, and the "add a new insect page in 4
+steps" guide.
 
 ## Internationalization
 

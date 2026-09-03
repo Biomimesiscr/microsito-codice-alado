@@ -41,10 +41,9 @@ export function SpeciesCard({ species, subtitle }: SpeciesCardProps) {
         />
       </div>
 
-      {/* En reposo el texto va suelto sobre la crema; al hover aparece la
-          franja arena y el nombre pasa a rust. */}
-      <div className="rounded-b-2xl px-4 py-3 text-center transition-colors duration-300 group-hover:bg-surface-raised">
-        <h3 className="text-lg font-bold text-fg transition-colors duration-300 group-hover:text-accent">
+    
+      <div className="rounded-b-2xl px-4 py-3 text-center transition-colors duration-300 ">
+        <h3 className="text-lg font-bold text-fg transition-colors duration-300 ">
           {species.name}
         </h3>
         <p className="text-sm text-fg-muted">{subtitle}</p>

@@ -58,5 +58,62 @@
     "about": "about us",
     "contact": "contact CICIMA",
     "community": "community"
+  },
+  "insects": {
+    "microAvispas": {
+      "label": "Project",
+      "title": "Micro Wasps",
+      "subtitle": "PhD research by biologist Rebeca Mora Castro",
+      "meta": "5 years of research",
+      "body": "The project focused on filling information gaps regarding the biophysics of several genera of micro wasps. The experimentation investigated aspects of color and patterns on the wasp's body, the function of the color pattern, and described the microstructure of certain body parts of these insects.",
+      "pattern": {
+        "text": "The color pattern studied in parasitoid wasps of the family Scelionidae was {{highlight}}",
+        "highlight": "BOB",
+        "captionLine1": "black-orange-black",
+        "captionLine2": "black-orange-black"
+      },
+      "intro": {
+        "title": "What are they?",
+        "body": "Micro wasps of the family Platygastridae are a group of small wasps whose life cycle mostly unfolds inside the eggs of other insects and spiders, killing them in the process. They are beneficial insects, essential to the natural balance and to pest control in agriculture."
+      },
+      "taxonomy": {
+        "title": "Taxonomy",
+        "labels": {
+          "order": "Order",
+          "family": "Family",
+          "subfamily": "Subfamily"
+        }
+      },
+      "genera": {
+        "title": "Genus/Species"
+      },
+      "scales": {
+        "title": "Biological scales",
+        "body": "This section holds detailed microscopic and macroscopic information about micro wasps"
+      },
+      "collection": {
+        "title": "Project collection sites",
+        "intro": "Ciudad Colón",
+        "sites": {
+          "upaz": "Surroundings of the recreational park at the University for Peace, Costa Rica"
+        }
+      },
+      "researcher": {
+        "title": "Meet the team behind the project!",
+        "role": "Researcher",
+        "profileTitle": "Academic and professional profile",
+        "cta": "Contact us",
+        "credentials": {
+          "phd": "PhD in Sciences from UCR",
+          "faculty": "Faculty member and researcher at UCR",
+          "biomimicry": "Biomimicry specialist at the Biomimicry Institute",
+          "guestFaculty": "Guest faculty at the Copenhagen Institute of Interaction Design, Bergamo, Italy",
+          "researchLines": "Research lines: Biophysics, Biodesign, entomology, Biomimicry, Biomaterials"
+        }
+      },
+      "articles": {
+        "title": "Related articles"
+      }
+    }
   }
 }

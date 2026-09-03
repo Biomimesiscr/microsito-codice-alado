@@ -7,6 +7,7 @@ import { MenuPage } from "./routes/MenuPage";
 import { SpeciesPage } from "./routes/SpeciesPage";
 import { ContactPage } from "./routes/ContactPage";
 import { AboutPage } from "./routes/AboutPage";
+import { InsectPage } from "./routes/InsectPage";
 import { MicroAvispa } from "./components/infographies/MicroAvispa";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/species" element={<SpeciesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/insecto/:id" element={<InsectPage />} />
       </Routes>
     </BrowserRouter>
   );

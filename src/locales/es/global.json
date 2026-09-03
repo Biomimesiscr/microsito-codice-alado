@@ -58,5 +58,62 @@
     "about": "sobre nosotros",
     "contact": "contacto CICIMA",
     "community": "comunidad"
+  },
+  "insects": {
+    "microAvispas": {
+      "label": "Proyecto",
+      "title": "Micro Avispas",
+      "subtitle": "Doctorado de la Bióloga Rebeca Mora Castro",
+      "meta": "5 años de Investigación",
+      "body": "El proyecto se enfocó en llenar vacíos de información en cuanto a la biofísica de varios géneros de micro avispas. La experimentación investigó aspectos del color y patrones en el cuerpo de la avispa, función del patrón de color y describir la microestructura de ciertas partes del cuerpo de dichos los insectos.",
+      "pattern": {
+        "text": "El patrón de color estudiado en avispas parasitoides de la familia Scelionidae fue de {{highlight}}",
+        "highlight": "BOB",
+        "captionLine1": "black-orange-black",
+        "captionLine2": "negro-naranja-negro"
+      },
+      "intro": {
+        "title": "¿Qué son?",
+        "body": "Las microavispas de la familia platygastridae son un grupo de avispas pequeñas, cuyo ciclo de vida se resume principalmente dentro de los huevos de otros insectos y arañas, causando la muerte de estos. Son insectos benéficos, fundamentales para el equilibrio natural y el control de plagas en la agricultura."
+      },
+      "taxonomy": {
+        "title": "Taxonomía",
+        "labels": {
+          "order": "Orden",
+          "family": "Familia",
+          "subfamily": "Subfamilia"
+        }
+      },
+      "genera": {
+        "title": "Género/Especie"
+      },
+      "scales": {
+        "title": "Escalas biológicas",
+        "body": "En esta sección encontrará información microscópica y macroscópica detallada de las Micro avispas"
+      },
+      "collection": {
+        "title": "Sitios de colecta del proyecto",
+        "intro": "Cuidad Colón",
+        "sites": {
+          "upaz": "Alrededores parque recreativo de la Universidad para la Paz, Costa Rica"
+        }
+      },
+      "researcher": {
+        "title": "¡Conocé al equipo detrás de proyecto!",
+        "role": "Investigadora",
+        "profileTitle": "Perfil académico y profesional",
+        "cta": "Contáctanos",
+        "credentials": {
+          "phd": "Doctorado en Ciencias de la UCR",
+          "faculty": "Docente e Investigadora UCR",
+          "biomimicry": "Biomimicry specialist del Biomimicry Institute",
+          "guestFaculty": "Docente en Copenhaguen institute Interaction Design, Bérgamo Italia",
+          "researchLines": "Líneas de investigación: Biofísica, Biodiseño, entomología, Biomímesis, Biomateriales"
+        }
+      },
+      "articles": {
+        "title": "Artículos relacionados"
+      }
+    }
   }
 }
