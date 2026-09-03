@@ -41,7 +41,7 @@ export const speciesCategories: SpeciesCategory[] = [
   {
     id: "beetles",
     items: [
-      { id: "chrysina", name: "Chrysina", image: "/images/bugs/chrysina.png", illustration: "/illustrations/bugs/chrysina.png", to: "/micro-avispa" },
+      { id: "chrysina", name: "Chrysina", image: "/images/bugs/chrysina.png", illustration: "/illustrations/bugs/chrysina.png", to: "/insecto/chrysina" },
     ],
   }
 ];
