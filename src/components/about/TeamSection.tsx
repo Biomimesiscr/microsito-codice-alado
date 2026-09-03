@@ -22,8 +22,8 @@ export function TeamSection({ title, members }: TeamSectionProps) {
     // su posición final y ese margen negativo aún no tapa el borde superior
     // contra la banda musgo, así que se ve asomar como una línea horizontal
     // durante la animación. Solo el fundido evita ese destape transitorio.
-    <AnimatedSection delay={1} duration={6} yOffset={0}>
-      <section className="-mt-[49px] z-0 rounded-b-[56px] border-3 border-accent px-8 pt-24 pb-16 sm:px-12 md:px-16 md:pt-28">
+    <AnimatedSection  duration={2} yOffset={0}>
+      <section className="-mt-12.5 z-0 rounded-b-[56px] border-3 border-t-0 border-accent px-8 pt-24 pb-16 sm:px-12 md:px-16 md:pt-28">
         <h2 className="mb-14 text-center text-3xl font-bold tracking-wide text-accent md:text-5xl">
           {title}
         </h2>

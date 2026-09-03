@@ -21,7 +21,7 @@ export function About() {
     <Surface tone="cream" scroll className="pb-24">
       <BackButton />
 
-      <AnimatedSection delay={1} duration={6}>
+      <AnimatedSection  duration={2}>
         <AboutHero
           title={t("about.cicima.title")}
           body={t("about.cicima.body")}
