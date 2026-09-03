@@ -9,7 +9,6 @@
  * `image` es un placeholder compartido hasta que haya ilustración por especie.
  */
 
-const PLACEHOLDER_IMAGE = "/illustrations/bugs/microavispa.png";
 
 export interface SpeciesItem {
   /** Clave de traducción del subtítulo: `species.items.<id>`. */
@@ -42,8 +41,7 @@ export const speciesCategories: SpeciesCategory[] = [
   {
     id: "beetles",
     items: [
-      { id: "zopherus", name: "Zopherus", image: PLACEHOLDER_IMAGE, illustration: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
-      { id: "chrysina", name: "Chrysina", image: PLACEHOLDER_IMAGE, illustration: PLACEHOLDER_IMAGE, to: "/micro-avispa" },
+      { id: "chrysina", name: "Chrysina", image: "/images/bugs/chrysina.png", illustration: "/illustrations/bugs/chrysina.png", to: "/micro-avispa" },
     ],
   }
 ];
