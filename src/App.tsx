@@ -9,10 +9,12 @@ import { ContactPage } from "./routes/ContactPage";
 import { AboutPage } from "./routes/AboutPage";
 import { InsectPage } from "./routes/InsectPage";
 import { MicroAvispa } from "./components/infographies/MicroAvispa";
+import { AnnotateWidget } from "./components/annotate/AnnotateWidget";
 
 function App() {
   return (
     <BrowserRouter>
+      <AnnotateWidget />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />

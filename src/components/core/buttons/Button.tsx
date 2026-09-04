@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from "react";
 
 export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  variant?: "pill" | "solid" | "outline" | "ghost";
+  variant?: "pill" | "solid" | "outline" | "cta" | "ghost";
   size?: "sm" | "md" | "lg";
 }
 
@@ -25,6 +25,13 @@ export function Button({
     // Acento sólido para llamadas a la acción principales
     solid:
       "bg-accent text-surface border border-accent rounded-lg hover:brightness-110 active:brightness-95",
+
+    // El botón del mockup de contacto: pastilla crema con texto latón. Existe
+    // aparte de `solid` porque `solid` fija `text-surface`, y sobrescribirlo
+    // desde `className` deja dos utilidades de texto con la misma
+    // especificidad: cuál gana depende del orden de la hoja, no del código.
+    cta:
+      "bg-accent text-heading rounded-md hover:brightness-105 active:brightness-95",
 
     // Sleek border-only component
     outline:

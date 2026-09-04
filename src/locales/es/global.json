@@ -29,6 +29,8 @@
     }
   },
   "contact": {
+    "heading": "Contáctanos",
+    "intro": "¿Te gustaría saber más sobre el CICIMA o colaborar? ¡Envíanos un mensaje y conversemos!",
     "title": "¿Te gustaría colaborar con la investigación? ¡Hablemos!",
     "formTitle": "¡Conectemos para crear juntos!",
     "fields": {
@@ -37,6 +39,11 @@
       "message": "Mensaje"
     },
     "submit": "Enviar",
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "email": "Escribe un correo válido"
+    },
+    "success": "¡Gracias! Te responderemos pronto.",
     "team": {
       "rebeca": {
         "role": "Investigadora"

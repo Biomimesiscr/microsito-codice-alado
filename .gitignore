@@ -29,3 +29,5 @@ dist-ssr
 .gemini
 AGENTS.md
 skills-lock.json
+
+.env

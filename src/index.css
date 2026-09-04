@@ -21,6 +21,8 @@
   --color-moss: #7c7e48;
   --color-sage: #a8ac8b;
   --color-sand: #e3d9a8;
+  --color-bark: #602d06;
+  --color-brass: #7e7742;
 
   /* --- Capa semántica (defaults = superficie cream) --- */
   --color-surface: #e6e2cb;
@@ -54,6 +56,19 @@
     --color-heading: var(--color-sage);
     --color-accent: var(--color-sand);
     --color-line: var(--color-olive-light);
+  }
+
+  /* Superficie de la pantalla de contacto. El mockup pinta el rust con una capa
+     negra al 34% encima; `bark` guarda ya el resultado de esa mezcla. */
+  [data-surface="bark"] {
+    --color-surface: var(--color-bark);
+    --color-surface-raised: var(--color-rust);
+    --color-fg: var(--color-cream);
+    --color-fg-muted: #c9c3a4;
+    --color-fg-subtle: #b0a98a;
+    --color-heading: var(--color-brass);
+    --color-accent: var(--color-cream);
+    --color-line: #c9c3a4;
   }
 
   /* Banda intermedia entre cream y olive. La usa la cabecera de «sobre
