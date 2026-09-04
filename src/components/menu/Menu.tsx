@@ -23,7 +23,7 @@ export function Menu() {
     { id: "species", label: t("menu.species") },
     { id: "about", label: t("menu.about") },
     { id: "contact", label: t("menu.contact") },
-    { id: "community", label: t("menu.community") },
+    { id: "community", label: t("menu.community"), external: true, url: "https://biofonia.biomimesiscr.org" },
   ];
 
   const viewBoxSize = 500;
@@ -96,7 +96,13 @@ export function Menu() {
                     className={`text-4xl md:text-5xl font-bold cursor-pointer select-none transition-colors duration-300 ${
                       isHovered ? "text-accent" : "text-fg"
                     }`}
-                    onClick={() => navigate(`/${item.id}`)}
+                    onClick={() => {
+                      if (item.external) {
+                        window.open(item.url, "_blank");
+                      } else {
+                        navigate(`/${item.id}`);
+                      }
+                    }}
                   >
                     {item.label}
                   </motion.h2>
@@ -108,7 +114,7 @@ export function Menu() {
                         animate={{ scaleX: 1, opacity: 1 }}
                         exit={{ scaleX: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="h-[2px] mt-1 origin-left bg-accent"
+                        className="h-0.5 mt-1 origin-left bg-accent"
                       />
                     )}
                   </AnimatePresence>
